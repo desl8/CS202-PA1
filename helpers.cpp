@@ -28,6 +28,7 @@ int readFile(ifstream& file, Movie* movies){
         //implement getlines to read and store the appropriate info until you reach the list of genres.
 
         getline(file, t, ',');
+        getline(file, junk, '"'); //Remove quote in first genre
 
         //use a do while to parse the list of genres
             //inside the do  while use getline to parse the genres. each genre will be stored into the created genre array. the genre count variable should be used to keep track of which index to store the genre at
@@ -51,6 +52,7 @@ int readFile(ifstream& file, Movie* movies){
 
         getline(file, de, ',');
         getline(file, di, ',');
+        getline(file, junk, '"'); //Remove quote in first actor
         
         do{
             getline(file, act[aCount], ',');

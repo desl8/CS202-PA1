@@ -25,6 +25,9 @@ def testAlphabeticalSortOnTitle():
 def testNumericalYearSort(): #ascending
     result = subprocess.run(["./genres", "temp.csv"],input= "7\n2\n1\nn\n", encoding = "utf-8",capture_output=True, text=True, timeout=60)
     outputToMatch = "Mr. Nobody\nDirector: Jaco Van Dormael\nActors: Jared Leto * Sarah Polley * Diane Kruger * Linh Dan Pham\nYear: 2009 Rating: 7.9 Meta Score: 63\nDescription: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose anything is possible.\nWould you like to select another movie(y/n)?"
+    print(result)
+    print("-----------")
+    print(outputToMatch)
     if outputToMatch not in result.stdout:
         print("Numerical year sort failed.")
         return 0
